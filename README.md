@@ -1,96 +1,165 @@
-#  Hotel Booking Analysis: Lead Time & Cancellations
+## Hotel Booking Analysis & Dashboard
 
-##  Project Overview
+## Project Overview
+This project focuses on analyzing hotel booking data to understand cancellation behavior, lead time impact, and revenue trends.
 
-Hotels face revenue loss due to booking cancellations, especially for reservations made well in advance. This project explores **how lead time affects cancellations** and identifies patterns to help hotels **optimize revenue** and **enhance guest experience**.
+Along with Exploratory Data Analysis (EDA), an interactive dashboard is built using Microsoft Power BI to visualize key business metrics and support data-driven decision-making.
 
-Using **Exploratory Data Analysis (EDA)** and regression, this project provides actionable insights for **revenue management, operational planning, and marketing strategies**.
-
----
+The goal is to help hotels reduce cancellations, optimize pricing, and improve operational efficiency.
 
 ## Objectives
+Analyze the relationship between lead time and cancellations
 
-- Analyze the effect of **lead time** on booking cancellations.  
-- Identify trends and patterns to **predict cancellations**.  
-- Suggest strategies to **reduce cancellations** and **maximize revenue**.  
-- Improve **guest satisfaction** and operational efficiency.  
+Identify patterns to predict booking cancellations
 
----
+Build an interactive dashboard for real-time insights
+
+Suggest strategies to maximize revenue and occupancy
+
+Improve customer experience and hotel operations
 
 ## Dataset Details
+Source: Hotel Booking Dataset
 
-- **Source:** Hotel Booking Dataset  
-- **Rows:** 119,390  
-- **Columns:** 32  
+Rows: 119,390
 
-**Key Variables:**
+Columns: 32
 
-| Column | Description |
-|--------|-------------|
-| `hotel` | Hotel type (Resort/City) |
-| `is_canceled` | 1 = canceled, 0 = not canceled |
-| `lead_time` | Days between booking and arrival |
-| `adr` | Average Daily Rate |
-| `adults`, `children`, `babies` | Number of guests |
-| `customer_type` | Customer type (Transient/Group/Contract) |
-| `market_segment` | Source of booking |
-| `deposit_type` | Type of deposit |
-| `reservation_status` | Current booking status |
+## Key Variables:
+Column	Description
 
-**Data Cleaning & Feature Engineering:**
+hotel	Hotel type (Resort/City)
 
-- Filled missing values: `children → 0`, `country → 'others'`, `agent → 0`  
-- Dropped column `company` (too many nulls)  
-- Removed bookings with `total_people = 0`  
-- Added new features:  
-  - `total_people = adults + children + babies`  
-  - `total_stay = stays_in_weekend_nights + stays_in_week_nights`  
+is_canceled	1 = canceled, 0 = not canceled
 
----
+lead_time	Days between booking and arrival
 
-##  Key Insights
+adr	Average Daily Rate
 
-1. **Seasonal Trends:**  
-   - High bookings during summer & winter months  
-   - Hotels can plan promotions and pricing accordingly  
+adults, children, babies	Number of guests
 
-2. **Lead Time & Cancellations:**  
-   - Longer lead time → higher cancellation probability  
-   - Short lead-time bookings are more reliable for revenue planning  
+customer_type	Type of customer
 
-3. **Guest Composition:**  
-   - Majority are leisure or transient customers  
-   - Helps in **targeted marketing** strategies  
+market_segment	Booking source
 
-4. **Revenue Analysis:**  
-   - ADR increases with longer lead time  
-   - Correlation exists between ADR, lead time, and cancellations  
+deposit_type	Deposit category
 
-5. **Operational Recommendations:**  
-   - Use **overbooking strategies** for high-cancellation periods  
-   - Plan staffing and resources based on cancellation trends  
+reservation_status	Booking status
 
----
+## Data Cleaning & Feature Engineering
+Filled missing values:
 
-##  Tools & Libraries
+children → 0
 
-- **Python Libraries:** pandas, numpy, matplotlib, seaborn, plotly  
-- **Environment:** Google Colab  
+country → 'others'
 
----
+agent → 0
 
-## Visualizations
+Dropped column:
 
-- **Univariate Analysis:** Histograms, Pie charts  
-- **Bivariate Analysis:** Boxplots, Scatter plots  
-- **Multivariate Analysis:** Correlation heatmaps, 3D insights  
+company (high missing values)
 
-> 20+ meaningful charts created following UBM (Univariate, Bivariate, Multivariate) approach  
+Removed invalid records:
+
+total_people = 0
+
+Created new features:
+
+total_people = adults + children + babies
+
+total_stay = stays_in_weekend_nights + stays_in_week_nights
+
+## Key Insights
+## 1. Seasonal Trends
+Peak bookings observed during summer & winter seasons
+
+Helps in dynamic pricing and promotional planning
+
+## 2. Lead Time vs Cancellations
+Longer lead time → higher cancellation probability
+
+Short lead-time bookings are more reliable
+
+## 3. Customer Behavior
+Majority customers are transient (leisure travelers)
+
+Useful for targeted marketing campaigns
+
+## 4. Revenue Insights
+Higher ADR (Average Daily Rate) linked with longer lead time
+
+Strong relationship between pricing, lead time, and cancellations
+
+## 5. Operational Strategy
+Implement controlled overbooking
+
+Optimize staffing and resource allocation
+
+## Dashboard (Power BI)
+An interactive dashboard was developed using Microsoft Power BI to provide real-time business insights.
+
+## Dashboard Features:
+## KPI Cards:
+
+Total Bookings
+
+Cancellation Rate
+
+Average ADR
+
+Total Revenue
+
+## Visualizations:
+
+Lead Time vs Cancellation trend
+
+Monthly booking trends
+
+Revenue distribution by hotel type
+
+Customer segmentation analysis
+
+## Filters / Slicers:
+
+Hotel Type
+
+Customer Type
+
+Market Segment
+
+Date Range
+
+## Key Benefit:
+The dashboard enables stakeholders to quickly identify trends, monitor performance, and make data-driven decisions.
+
+## Tools & Technologies
+Python: pandas, numpy, matplotlib, seaborn, plotly
+
+Visualization: Microsoft Power BI
+
+Environment: Google Colab
+
+## Visualizations (EDA)
+Univariate Analysis: Histograms, Pie Charts
+
+Bivariate Analysis: Boxplots, Scatter Plots
+
+Multivariate Analysis: Correlation Heatmaps
+
+## 20+ meaningful charts created using UBM (Univariate, Bivariate, Multivariate) approach
 
 ## Business Impact
+ Reduce booking cancellations
 
-- Reduce booking cancellations & improve revenue  
-- Optimize **pricing strategies** for peak/off-peak seasons  
-- Improve **guest experience** by better planning  
-- Provide actionable insights for **operational & marketing decisions**  
+ Improve revenue management strategies
 
+ Enable data-driven decision making
+
+ Enhance customer experience
+
+ Optimize hotel operations
+
+## Conclusion
+This project demonstrates how combining data analysis + interactive dashboarding can solve real-world business problems in the hospitality industry.
+
+It highlights the importance of lead time, pricing strategies, and customer behavior analysis in improving hotel performance.
